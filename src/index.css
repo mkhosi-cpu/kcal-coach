@@ -2,39 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* EatWise Design System - Beautiful colors for health & nutrition app */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Main color palette - Fresh greens for health & vitality */
+    --background: 120 60% 97%;
+    --foreground: 210 20% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 20% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 20% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Fresh green for health/nutrition */
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 142 76% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Soft orange for energy */
+    --secondary: 33 100% 96%;
+    --secondary-foreground: 33 100% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Neutral grays */
+    --muted: 120 20% 95%;
+    --muted-foreground: 210 15% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Warm orange for CTAs */
+    --accent: 33 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success - Deeper green for achievements */
+    --success: 142 85% 30%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning - Amber for moderation */
+    --warning: 43 100% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 30% 88%;
+    --input: 120 30% 88%;
+    --ring: 142 76% 36%;
+
+    /* Gradients for beautiful effects */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-health: linear-gradient(135deg, hsl(142 76% 36%), hsl(165 76% 40%));
+    --gradient-energy: linear-gradient(135deg, hsl(33 100% 50%), hsl(43 100% 50%));
+    --gradient-calm: linear-gradient(135deg, hsl(120 60% 97%), hsl(120 40% 94%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 20px -5px hsl(var(--primary) / 0.15);
+    --shadow-primary: 0 4px 30px -8px hsl(var(--primary) / 0.3);
+    --shadow-accent: 0 4px 25px -8px hsl(var(--accent) / 0.25);
 
     --radius: 0.5rem;
 
@@ -56,33 +79,52 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode - Deep greens with high contrast */
+    --background: 210 25% 8%;
+    --foreground: 120 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 25% 10%;
+    --card-foreground: 120 20% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 25% 10%;
+    --popover-foreground: 120 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 142 76% 45%;
+    --primary-foreground: 210 25% 8%;
+    --primary-glow: 142 76% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 25% 15%;
+    --secondary-foreground: 120 20% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 25% 12%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 33 100% 55%;
+    --accent-foreground: 210 25% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --success: 142 85% 40%;
+    --success-foreground: 210 25% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --warning: 43 100% 55%;
+    --warning-foreground: 210 25% 8%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 210 25% 8%;
+
+    --border: 210 25% 15%;
+    --input: 210 25% 15%;
+    --ring: 142 76% 45%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-health: linear-gradient(135deg, hsl(142 76% 45%), hsl(165 76% 50%));
+    --gradient-energy: linear-gradient(135deg, hsl(33 100% 55%), hsl(43 100% 55%));
+    --gradient-calm: linear-gradient(135deg, hsl(210 25% 8%), hsl(210 25% 12%));
+
+    /* Dark shadows */
+    --shadow-soft: 0 2px 20px -5px hsl(0 0% 0% / 0.3);
+    --shadow-primary: 0 4px 30px -8px hsl(var(--primary) / 0.4);
+    --shadow-accent: 0 4px 25px -8px hsl(var(--accent) / 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +142,32 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
+    background: hsl(var(--background));
+  }
+
+  /* Custom utility classes for EatWise */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-health {
+    background: var(--gradient-health);
+  }
+
+  .gradient-energy {
+    background: var(--gradient-energy);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
   }
 }
